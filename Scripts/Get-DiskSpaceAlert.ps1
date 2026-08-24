@@ -18,6 +18,9 @@ param(
 $drive = Get-PSDrive -Name C
 $freePercent = [math]::Round(($drive.Free / ($drive.Free + $drive.Used)) * 100, 1)
 
+$freeGB = [math]::Round($drive.Free / 1GB, 1)
+Write-Host "C: free space: $freePercent% ($freeGB GB) (threshold: $ThresholdPercent%)"
+
 Write-Host "C: free space: $freePercent% (threshold: $ThresholdPercent%)"
 
 if ($freePercent -lt $ThresholdPercent) {
