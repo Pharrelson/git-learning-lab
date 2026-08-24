@@ -1,0 +1,8 @@
+﻿.vscode/
+*.log
+.env
+*.zip
+bin/
+obj/
+.bicep/
+infra/*.json
